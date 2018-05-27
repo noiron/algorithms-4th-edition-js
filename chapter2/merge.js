@@ -10,7 +10,10 @@
 function merge(a, lo, mid, hi) {
 
   // 将 a[lo..hi] 复制到 aux[lo..hi]
-  const aux = [...a]
+  const aux = []
+  for (let k = lo; k < hi; k++) {
+    aux[k] = a[k];
+  }
 
   let i = lo
   let j = mid + 1
