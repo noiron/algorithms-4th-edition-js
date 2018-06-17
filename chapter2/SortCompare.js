@@ -7,6 +7,8 @@
 const Insertion = require('./Insertion');
 const Selection = require('./Selection');
 const Shell = require('./Shell');
+const Merge = require('./mergeSort')
+const MergeBU = require('./mergeBUSort')
 
 function SortCompare(alg1, alg2, len, T) {
     const t1 = timeRandomInput(alg1, len, T);
@@ -42,6 +44,12 @@ function time(alg, a) {
     if (alg === 'Shell') {
         Shell.sort(a);
     }
+    if (alg === 'Merge') {
+        Merge.sort(a)
+    }
+    if (alg === 'MergeBU') {
+        MergeBU.sort(a)
+    }
     const end = new Date();
     return end.getTime() - start.getTime();
 }
@@ -50,4 +58,10 @@ function time(alg, a) {
 // SortCompare('Insertion', 'Selection',  1000, 100);
 
 // 比较希尔排序和插入排序
-SortCompare('Shell', 'Insertion', 10000, 100);
+// SortCompare('Shell', 'Insertion', 10000, 100);
+
+// 比较插入排序和归并排序
+// SortCompare('Insertion', 'Merge', 10000, 100);
+
+// 比较归并排序
+SortCompare('Merge', 'MergeBU', 100000, 100)

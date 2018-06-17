@@ -11,6 +11,7 @@ class MergeBU extends Base {
 
   static sort(a) {
     const len = a.length
+    // sz: 子数组大小
     for (let sz = 1; sz < len; sz = sz * 2) {
       for (let lo = 0; lo <  len - sz; lo += sz * 2) {
         merge(a, lo, lo + sz - 1, Math.min(lo + sz + sz - 1, len - 1))
